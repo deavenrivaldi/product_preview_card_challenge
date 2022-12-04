@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.max-width {
+  height: 100vh;
+  background-color: hsl(30deg, 38%, 92%);
+  padding: 28px 16px;
+}
+
+.card {
+  min-width: 343px;
+  max-height: 611px;
+  border-radius: 10px;
+  background-color: hsl(0deg, 0%, 100%);
+  overflow: hidden;
+}
+.card-left {
+  height: 240px;
+}
+.card-left #img_mobile {
+  max-width: 100%;
+}
+.card-left #img_desktop {
+  display: none;
+}
+.card-right {
+  padding: 22px 23px 24px 25px;
+  height: 371px;
+}
+.card-right h2 {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  color: hsl(212deg, 21%, 14%);
+}
+.card-right h3 {
+  font-size: 12px;
+  line-height: 24px; /* identical to box height, or 200% */
+  letter-spacing: 0.51em;
+  color: hsl(228deg, 12%, 48%);
+  margin-bottom: 6px;
+}
+.card-right p {
+  line-height: 23px;
+  color: hsl(228deg, 12%, 48%);
+  margin: 16px 0;
+}
+.card-right .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 19px;
+  margin: 13px 0 24px;
+}
+.card-right .price h2 {
+  color: hsl(158deg, 36%, 37%);
+  line-height: 23px;
+}
+.card-right .price p {
+  font-size: 12px;
+  text-decoration: line-through;
+  margin: 0;
+}
+.card-right button {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  background-color: hsl(158deg, 36%, 37%);
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  line-height: 23px; /* identical to box height, or 164% */
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.card-right button:hover {
+  cursor: pointer;
+  background-color: hsl(212deg, 21%, 14%);
+  transition: all 0.7s;
+}
+
+.attribution {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+.attribution a {
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .card-holder {
+    height: 450px;
+    width: 600px;
+  }
+  .card-holder .card {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-area: "&-left" "&-right";
+  }
+  .card-holder .card-left {
+    height: 100%;
+  }
+  .card-holder .card-left #img_mobile {
+    display: none;
+  }
+  .card-holder .card-left #img_desktop {
+    display: block;
+    width: 100%;
+  }
+  .card-holder .card-right {
+    height: 100%;
+    padding: 29px 32px 32px;
+  }
+  .card-holder .card-right h3 {
+    font-size: 14px;
+    letter-spacing: 0.33em;
+    margin-bottom: 14px;
+  }
+  .card-holder .card-right p {
+    letter-spacing: 0.008em;
+    margin: 24px 0;
+  }
+  .card-holder .card-right .price {
+    margin: 10px 0 34px;
+  }
+  .card-holder .card-right .price p {
+    margin: 0;
+  }
+}/*# sourceMappingURL=styles.css.map */

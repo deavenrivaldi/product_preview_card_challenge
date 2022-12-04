@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+
+$dark_cyan: hsl(158, 36%, 37%);
+$cream: hsl(30, 38%, 92%);
+
+$v_dark_blue: hsl(212, 21%, 14%);
+$dark_blue: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+
+// font-family: 'Fraunces', serif;
+// font-family: 'Montserrat', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.max-width {
+  height: 100vh;
+  background-color: $cream;
+  padding: 28px 16px;
+}
+
+.card {
+  min-width: 343px;
+  max-height: 611px;
+  border-radius: 10px;
+  background-color: $white;
+  overflow: hidden;
+
+  &-left {
+    height: 240px;
+    #img_mobile {
+      max-width: 100%;
+    }
+
+    #img_desktop {
+      display: none;
+    }
+  }
+
+  &-right {
+    padding: 22px 23px 24px 25px;
+    height: calc(611px - 240px);
+    h2 {
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 32px;
+      color: $v_dark_blue;
+    }
+
+    h3 {
+      font-size: 12px;
+      line-height: 24px; /* identical to box height, or 200% */
+      letter-spacing: 0.51em;
+      color: $dark_blue;
+      margin-bottom: 6px;
+    }
+
+    p {
+      line-height: 23px;
+      color: $dark_blue;
+      margin: 16px 0;
+    }
+
+    .price {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 19px;
+      margin: 13px 0 24px;
+
+      h2 {
+        color: $dark_cyan;
+        line-height: 23px;
+      }
+
+      p {
+        font-size: 12px;
+        text-decoration: line-through;
+        margin: 0;
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 48px;
+      border: none;
+      border-radius: 10px;
+      background-color: $dark_cyan;
+
+      color: $white;
+      font-weight: 700;
+      line-height: 23px; /* identical to box height, or 164% */
+      letter-spacing: 0.01em;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: $v_dark_blue;
+      transition: all 0.7s;
+    }
+  }
+}
+
+.attribution {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  a {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .card-holder {
+    height: 450px;
+    width: 600px;
+
+    .card {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-area: "&-left" "&-right";
+
+      &-left {
+        height: 100%;
+
+        #img_mobile {
+          display: none;
+        }
+
+        #img_desktop {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &-right {
+        height: 100%;
+        padding: 29px 32px 32px;
+        h3 {
+          font-size: 14px;
+          letter-spacing: 0.33em;
+          margin-bottom: 14px;
+        }
+
+        p {
+          letter-spacing: 0.008em;
+          margin: 24px 0;
+        }
+
+        .price {
+          margin: 10px 0 34px;
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
