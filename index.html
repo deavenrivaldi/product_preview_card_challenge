@@ -17,11 +17,11 @@
     <div class="max-width">
       <div class="card-holder">
         <div class="card">
-          <div class="card-left">
-            <img src="images/image-product-mobile.jpg" alt="product-img" id="img_mobile"/>
-            <img src="images/image-product-desktop.jpg" alt="product-img" id="img_desktop"/>
-          </div>
-          <div class="card-right">
+          <picture class="card-left">
+            <source media="(min-width: 768px)" srcset="images/image-product-desktop.jpg" alt="product-img"/>
+            <img src="images/image-product-mobile.jpg" alt="image of Gabrielle chanel perfume product"/>
+          </picture>
+          <main class="card-right">
             <h3>PERFUME</h3>
             <h2>Gabrielle Essence Eau De Parfum</h2>
             <p>
@@ -29,11 +29,10 @@
               Polge, Perfumer-Creator for the House of CHANEL.
             </p>
             <div class="price">
-              <h2>$149.99</h2>
-              <p>$169.99</p>
+              <h2>$149.99<del>$169.99</del></h2>
             </div>
             <button>
-              <img src="images/icon-cart.svg"></img>
+              <img src="images/icon-cart.svg" alt="cart icon"></img>
               Add to Cart
             </button>
           </div>
