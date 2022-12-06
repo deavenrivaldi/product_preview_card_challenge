@@ -23,30 +23,29 @@ $white: hsl(0, 0%, 100%);
 .max-width {
   height: 100vh;
   background-color: $cream;
-  padding: 28px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
 }
 
 .card {
-  min-width: 343px;
-  max-height: 611px;
+  width: 343px;
+  height: 611px;
   border-radius: 10px;
   background-color: $white;
   overflow: hidden;
 
   &-left {
+    display: block;
     height: 240px;
-    #img_mobile {
-      max-width: 100%;
-    }
-
-    #img_desktop {
-      display: none;
+    img {
+      width: 100%;
     }
   }
 
   &-right {
     padding: 22px 23px 24px 25px;
-    height: calc(611px - 240px);
     h2 {
       font-family: "Fraunces", serif;
       font-weight: 700;
@@ -70,21 +69,22 @@ $white: hsl(0, 0%, 100%);
     }
 
     .price {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 19px;
-      margin: 13px 0 24px;
-
+      margin: 26px 0 ; 
       h2 {
         color: $dark_cyan;
         line-height: 23px;
-      }
+        display: table;
 
-      p {
-        font-size: 12px;
-        text-decoration: line-through;
-        margin: 0;
+        del {
+          font-size: 12px;
+          font-weight: 400;
+          color: $dark_blue;
+          text-decoration: line-through;
+
+          display: table-cell;
+          vertical-align: middle;
+          padding-left: 22px;
+        }
       }
     }
 
@@ -124,55 +124,27 @@ $white: hsl(0, 0%, 100%);
 }
 
 @media (min-width: 768px) {
-  .max-width {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-
-  .card-holder {
+  .card {
     height: 450px;
     width: 600px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-area: "&-left" "&-right";
 
-    .card {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      grid-area: "&-left" "&-right";
-
-      &-left {
-        height: 100%;
-
-        #img_mobile {
-          display: none;
-        }
-
-        #img_desktop {
-          display: block;
-          width: 100%;
-        }
+    &-right {
+      padding: 29px 32px 32px;
+      h3 {
+        letter-spacing: 0.5em;
+        margin-bottom: 14px;
       }
 
-      &-right {
-        height: 100%;
-        padding: 29px 32px 32px;
-        h3 {
-          font-size: 14px;
-          letter-spacing: 0.33em;
-          margin-bottom: 14px;
-        }
+      p {
+        letter-spacing: 0.008em;
+        margin: 24px 0;
+      }
 
-        p {
-          letter-spacing: 0.008em;
-          margin: 24px 0;
-        }
-
-        .price {
-          margin: 10px 0 34px;
-          p {
-            margin: 0;
-          }
-        }
+      .price {
+        margin: 34px 0;
       }
     }
   }
